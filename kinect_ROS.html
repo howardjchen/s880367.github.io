@@ -1,0 +1,244 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    
+    <meta name="description" content="# Kinect installation for Ubuntu&amp;ROS This tutorial will teach you how to install kinect drivers on U">
+    
+    <title>Kinect installation for Ubuntu&amp;ROS - HackMD</title>
+    <link rel="icon" type="image/png" href="https://hackmd.io/favicon.png">
+	<link rel="apple-touch-icon" href="https://hackmd.io/apple-touch-icon.png">
+    <meta property="fb:app_id" content="1436904003272070">
+
+<meta name="twitter:image:src" content="https://lh5.googleusercontent.com/-oGEUExoJObE/AAAAAAAAAAI/AAAAAAAAAyc/tEoWIRZgzRo/photo.jpg?sz=50" />
+
+<meta name="twitter:site" content="@hackmd" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Kinect installation for Ubuntu&amp;ROS - HackMD" />
+
+<meta name="twitter:description" content="# Kinect installation for Ubuntu&amp;ROS This tutorial will teach you how to install kinect drivers on U" />
+
+
+<meta property="og:image" content="https://lh5.googleusercontent.com/-oGEUExoJObE/AAAAAAAAAAI/AAAAAAAAAyc/tEoWIRZgzRo/photo.jpg?sz=50" />
+
+<meta property="og:site_name" content="HackMD" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Kinect installation for Ubuntu&amp;ROS - HackMD" />
+
+<meta property="og:description" content="# Kinect installation for Ubuntu&amp;ROS This tutorial will teach you how to install kinect drivers on U" />
+
+	
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" integrity="sha256-3iu9jgsy9TpTwXKb7bNQzqWekRX7pPK+2OLj3R922fo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/3.5.0/octicons.min.css" integrity="sha256-QiWfLIsCT02Sdwkogf6YMiQlj4NE84MKkzEMkZnMGdg=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://hackmd.io/css/google-font.css">
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href='https://hackmd.io/css/github-extract.css'>
+    <link rel="stylesheet" href='https://hackmd.io/css/gist.css'>
+    <link rel="stylesheet" href="https://hackmd.io/css/mermaid.css">
+    <link rel="stylesheet" href='https://hackmd.io/css/markdown.css'>
+    <link rel="stylesheet" href='https://hackmd.io/vendor/emojify.js/dist/css/basic/emojify.min.css'>
+    
+<link href="/build/pretty.7b2b2bfe0621f7954b03.css" rel="stylesheet">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js" integrity="sha256-8E4Is26QH0bD52WoQpcB+R/tcWQtpzlCojrybUd7Mxo=" crossorigin="anonymous"></script>
+<![endif]-->
+</head>
+
+<body style="display:none;">
+    <div class="ui-infobar container-fluid unselectable hidden-print">
+        <small>
+            <span>
+                
+                    <span class="ui-lastchangeuser">&thinsp;<i class="ui-user-icon small" style="background-image: url(https://lh5.googleusercontent.com/-oGEUExoJObE/AAAAAAAAAAI/AAAAAAAAAyc/tEoWIRZgzRo/photo.jpg?sz=50);" data-toggle="tooltip" data-placement="right" title="Howard Chen"></i></span>
+                
+                &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
+                <span class="ui-lastchange text-uppercase" data-createtime="Wed Nov 23 2016 09:14:04 GMT+0000 (UTC)" data-updatetime="Fri Nov 25 2016 15:04:00 GMT+0000 (UTC)"></span>
+            </span>
+            <span class="pull-right">25 views <a href="#" class="ui-edit" title="Edit this note"><i class="fa fa-fw fa-pencil"></i></a></span>
+            <br>
+            
+        </small>
+    </div>
+    <div id="doc" class="container markdown-body"># Kinect installation for Ubuntu&amp;ROS
+This tutorial will teach you how to install kinect drivers on Ubuntu 14.04 and it is also helpful for install kinects driver for ROS.
+Although you install ROS on ubuntu, you still have to install kinect drive in order to use in ROS.
+
+## Install 3rd party lib
+````
+sudo apt-get install libopenni-dev libopenni-sensor-primesense-dev
+sudo apt-get install python libusb-1.0-0-dev freeglut3-dev doxygen graphviz
+````
+
+## 1. JVM
+Download jdk-8u73-linux-x64.tar on java official website or download from our drive.
+
+````
+sudo mkdir -p /usr/lib/jvm/
+sudo cp -r jdk1.8.0_73/ /usr/lib/jvm/
+
+sudo update-alternatives --install &#34;/usr/bin/java&#34; &#34;java&#34; &#34;/usr/lib/jvm/jdk1.8.0_73/bin/java&#34; 1
+sudo update-alternatives --install &#34;/usr/bin/javac&#34; &#34;javac&#34; &#34;/usr/lib/jvm/jdk1.8.0_73/bin/javac&#34; 1
+sudo update-alternatives --install &#34;/usr/bin/jar&#34; &#34;jar&#34; &#34;/usr/lib/jvm/jdk1.8.0_73/bin/jar&#34; 1
+
+sudo update-alternatives --config java
+sudo update-alternatives --config javac
+sudo update-alternatives --config jar
+````
+
+
+## 2.Install OpenNI from source
+This is required for the kinect interface
+
+	sudo apt-get install git-core cmake freeglut3-dev pkg-config build-essential libxmu-dev libxi-dev libusb-1.0-0-dev doxygen graphviz mono-complete
+
+Now clone the code and set it up
+
+```` 
+mkdir ~/kinect
+cd ~/kinect
+git clone https://github.com/OpenNI/OpenNI.git
+````
+
+This thing has a bizarre install scheme. Do the following:
+````
+cd OpenNI/Platform/Linux/CreateRedist/
+chmod +x RedistMaker
+./RedistMaker
+````
+Now this creates some distribution. One of the two following cases should work. Else just look for a damn compiled binary, extract it and install it.
+````
+Case 1:
+cd Final
+tar -xjf OpenNI-Bin-Dev-Linux*bz2
+cd OpenNI- ...
+sudo ./install.sh
+````
+````
+Case 2:
+cd ../Redist/OpenNI-Bin-Dev-Linux-x64-v1.5.2.23/
+sudo ./install.sh
+````
+
+## 3. Install Sensor Kinect
+Yet another library for the Kinect.. (Why can&#39;t anyone package all this into one distribution)..
+There are two versions of this. One should work.. (i.e., if you get some weird error with one, use the second one
+
+	mkdir SensorKinect
+	cd SensorKinect 
+
+Version 1 : (this one did not work for Samir)
+
+	git clone git://github.com/avin2/SensorKinect.git
+
+Version 2 : (this one worked for Samir) This one work for me
+
+	git clone git://github.com/ph4m/SensorKinect.git
+
+Once you have the lib, go ahead and compile it in the same bizarre manner as OpenNI (well atleast they are consistent).
+ ````
+ cd SensorKinect/Platform/Linux/CreateRedist/
+ chmod +x RedistMaker
+ ./RedistMaker
+````
+Done compiling. Now install this.
+````
+cd Final
+tar -xjf Sensor ...
+cd Sensor ...
+sudo ./install.sh
+````
+Test and Verifyvation If ROS is installed
+
+
+**In Jade:**
+
+	sudo apt-get install ros-jade-openni-launch
+
+**In Indigo:**
+	
+	sudo apt-get install ros-indigo-openni-launch
+
+**Test**
+	
+	roslaunch openni_launch openni.launch
+	rosrun rviz rviz
+
+**If ROS is not installed**
+	
+	NiViewer
+
+
+## 4. Trouble shooting
+Kinect driver and debug 
+http://mitchtech.net/ubuntu-kinect-openni-primesense/
+if you get the error:
+
+	InitFromXml failed: Failed to set USB interface!  
+
+the solution is to remove the gspca_linect kernel module:
+	
+	sudo rmmod gspca_kinect
+
+## 5. Reference : 
+http://mitchtech.net/ubuntu-kinect-openni-primesense/
+https://bitbucket.org/samirmenon/scl-manips-v2/wiki/vision/kinect</div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
+    
+</body>
+
+</html>
+<script src="https://hackmd.io/js/ga.js" async defer></script>
+<script src="//d2wy8f7a9ursnm.cloudfront.net/bugsnag-3.min.js" data-apikey="b37f9a2e78c06af12acdfc9579b7d842" async defer></script>
+<script src="https://hackmd.io/js/mixpanel.js" async defer></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ messageStyle: "none", skipStartupTypeset: true ,tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']], processEscapes: true }});
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/3.6.1/js-yaml.min.js" integrity="sha256-tvANaUGcQTLkCS9wHnLZhBFVfIWQJpm98WOpykjD+eo=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js" integrity="sha256-yYfngbEKv4RENfGDvNUqJTqGFcKf31NJEe9OTnnMH3Y=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-immzXfCGLhnx3Zfi9F/dUcqxEM8K3o3oTFy9Bh6HCwg=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment-with-locales.min.js" integrity="sha256-J5wam9fTysK5BqYlUUBjbomFslRxkLgwB9AhnVWsj1Q=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/6.0.0/mermaid.min.js" integrity="sha256-Yabf6Mj1TPKd6h4F6z5xRR1/2son0Wg8NhvjYnhcQcY=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/js/emojify.min.js" integrity="sha256-VAB5tAlKBvgaxw8oJ1crWMVbdmBVl4mP/2M8MNRl+4E=" crossorigin="anonymous" defer></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha256-KM512VNnjElC30ehFwehXjx1YCHPiQkOPmqnrWtpccM=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js" integrity="sha256-rMOSOM5HDzVEMoVZTv2189+RKSTSgY5ZKfTfap7q2zE=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.5/gist-embed.min.js" integrity="sha256-hmjTba0C6gzDF3N0+Opwd/Jxk4e8ypWrcBw/57rY0Dk=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js" integrity="sha256-s63qpgPYoQk+wv3U6WZqioVJrwFNBTgD4dkeegLuwvo=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.4/lodash.min.js" integrity="sha256-KteOoEtQ75FeAFFOTJZlvNt0iJ8NMusVDESd5jlwKEQ=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/viz.js/1.3.0/viz.js" integrity="sha256-FGmk+pMdOeRk4xTJ168rnGms1KjYi6jYMYaNEmSsvuQ=" crossorigin="anonymous" defer></script>
+
+<script src="/build/11.vendor.7b2b2bfe0621f7954b03.js" defer></script>
+
+<script src="/build/9.pretty.7b2b2bfe0621f7954b03.js" defer></script>
+
+
+<script src="https://hackmd.io/js/reveal-markdown.js" defer></script>
+
